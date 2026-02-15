@@ -129,7 +129,69 @@ Contract Ledger Management System 是一款专为工程项目打造的合同台�
 
 ## 🚀 快速开始
 
-### 方式一：使用启动脚本（推荐）
+### 前置要求
+
+在开始之前，请确保已安装：
+- Node.js 18.x 或更高版本
+- npm 9.x 或更高版本
+
+### 安装步骤
+
+```bash
+# 1. 克隆仓库
+git clone https://github.com/fakeman1232/Contract-Ledger-app.git
+cd Contract-Ledger-app
+
+# 2. 安装依赖
+npm install
+
+# 3. 配置环境变量
+cp .env.example .env.local
+
+# 4. 启动开发服务器
+npm run dev
+```
+
+应用将在 `http://localhost:3000` 启动。
+
+### 环境变量配置
+
+项目使用 `.env.local` 文件存储环境变量，从 `.env.example` 复制：
+
+```bash
+cp .env.example .env.local
+```
+
+`.env.local` 包含以下配置：
+
+```env
+# JWT 密钥配置
+# 请在生产环境中使用强随机字符串
+JWT_SECRET=your-secret-key-change-in-production-use-random-string-here
+```
+
+⚠️ **重要**：在生产环境中，请将 `JWT_SECRET` 替换为强随机字符串。
+
+### 数据库初始化
+
+首次运行 `npm run dev` 时，系统会自动：
+1. 创建 `data/contract-ledger.db` 数据库文件
+2. 创建所有必要的表结构
+3. 创建默认管理员账号
+
+详细的数据库结构说明请查看 [INIT_DB.md](INIT_DB.md)
+
+### 默认账号
+
+系统预置了管理员账号，首次登录后请及时修改密码：
+
+| 用户名 | 密码 | 权限 |
+|-------|------|------|
+| admin | admin123 | 管理员 |
+
+⚠️ **安全提示**：生产环境部署前请务必修改默认管理员密码！
+
+### 使用启动脚本（可选）
 
 #### macOS 用户
 
@@ -145,32 +207,6 @@ Contract Ledger Management System 是一款专为工程项目打造的合同台�
 - ✅ 初始化 SQLite 数据库
 - ✅ 启动开发服务器
 - ✅ 自动在浏览器中打开应用
-
-### 方式二：命令行安装
-
-```bash
-# 1. 克隆仓库
-git clone https://github.com/fakeman1232/contract-ledger-app-web.git
-cd contract-ledger-app-web
-
-# 2. 安装依赖
-npm install
-
-# 3. 启动开发服务器
-npm run dev
-```
-
-应用将在 `http://localhost:3000` 启动。
-
-### 默认账号
-
-系统预置了管理员账号，首次登录后请及时修改密码：
-
-| 用户名 | 密码 | 权限 |
-|-------|------|------|
-| admin | admin123 | 管理员 |
-
-⚠️ **安全提示**：生产环境部署前请务必修改默认管理员密码！
 
 ---
 
@@ -566,8 +602,8 @@ contract-ledger-app/
 1. **克隆仓库**
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/contract-ledger-app.git
-cd contract-ledger-app
+git clone https://github.com/fakeman1232/Contract-Ledger-app.git
+cd Contract-Ledger-app
 ```
 
 2. **安装依赖**
@@ -578,7 +614,13 @@ npm install
 
 3. **配置环境变量**
 
-创建 `.env.local` 文件（可选）：
+复制环境变量示例文件并修改（可选，系统有默认值）：
+
+```bash
+cp .env.example .env.local
+```
+
+编辑 `.env.local`：
 
 ```env
 JWT_SECRET=your-secret-key-change-in-production
@@ -765,8 +807,8 @@ CMD ["npm", "start"]
 
 ```bash
 # 1. Fork 并克隆仓库
-git clone https://github.com/fakeman1232/contract-ledger-app-web.git
-cd contract-ledger-app-web
+git clone https://github.com/fakeman1232/Contract-Ledger-app.git
+cd Contract-Ledger-app
 
 # 2. 创建开发分支
 git checkout -b feature/your-feature-name
@@ -818,9 +860,8 @@ SOFTWARE.
 ## 📬 联系方式
 
 - **作者**：Wei Liu
-- **邮箱**：[YOUR_EMAIL]
-- **项目地址**：[https://github.com/fakeman1232/contract-ledger-app](https://github.com/fakeman1232/contract-ledger-app)
-- **问题反馈**：[GitHub Issues](https://github.com/fakeman1232/contract-ledger-app/issues)
+- **项目地址**：[https://github.com/fakeman1232/Contract-Ledger-app](https://github.com/fakeman1232/Contract-Ledger-app)
+- **问题反馈**：[GitHub Issues](https://github.com/fakeman1232/Contract-Ledger-app/issues)
 
 ---
 
